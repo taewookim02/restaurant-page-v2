@@ -79,3 +79,32 @@ body {
   text-align: center;
   padding: 3rem;
 }
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #333;
+  border-radius: 1rem;
+}
+
+.menu-item:first-child {
+  margin-top: 2rem;
+}
+
+.img-menu-item {
+  max-width: 4rem;
+  border-radius: 1rem;
+}
+
+.menu-price {
+  padding-top: 1rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
