@@ -5,6 +5,9 @@ const nav = document.querySelector(".nav");
 const content = document.querySelector("#content");
 
 // get buttons
+const buttonHome = document.querySelector(".button-home");
+const buttonMenu = document.querySelector(".button-menu");
+const buttonAbout = document.querySelector(".button-about");
 
 // event listeners
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,8 +21,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // addBody();
   // addMenu();
-  addAbout();
+  // addAbout();
+  // FIXME: event listeners for buttons are not working
+  // FIXME: Add debuggers on webpack
+  // event listeners for buttons
+  buttonHome.addEventListener("click", () => {
+    content.innerHTML = "";
+    addBody();
+  });
+
+  buttonMenu.addEventListener("click", () => {
+    content.innerHTML = "";
+    addMenu();
+  });
+
+  buttonAbout.addEventListener("click", () => {
+    content.innerHTML = "";
+    addAbout();
+  });
 });
+
+function addHeader() {
+  // Add logo image
+  const imgLogo = document.createElement("img");
+  imgLogo.src = "../src/img/logo.png";
+  imgLogo.alt = "logo";
+  imgLogo.classList.add("img-logo");
+  header.appendChild(imgLogo);
+
+  // Add nav
+  const buttonHome = document.createElement("button");
+  buttonHome.textContent = "Home";
+  buttonHome.classList.add("active");
+  buttonHome.classList.add("button-home");
+  nav.appendChild(buttonHome);
+  const buttonMenu = document.createElement("button");
+  buttonMenu.textContent = "Menu";
+  buttonMenu.classList.add("button-menu");
+  nav.appendChild(buttonMenu);
+  const buttonAbout = document.createElement("button");
+  buttonAbout.textContent = "About";
+  buttonAbout.classList.add("button-about");
+  nav.appendChild(buttonAbout);
+  header.appendChild(nav);
+}
 
 function addAbout() {
   const about = document.createElement("section");
@@ -89,27 +134,6 @@ function addMenu() {
     `;
     menu.appendChild(menuItem);
   });
-}
-
-function addHeader() {
-  // Add logo image
-  const imgLogo = document.createElement("img");
-  imgLogo.src = "../src/img/logo.png";
-  imgLogo.alt = "logo";
-  imgLogo.classList.add("img-logo");
-  header.appendChild(imgLogo);
-
-  // Add nav
-  const buttonHome = document.createElement("button");
-  buttonHome.textContent = "Home";
-  nav.appendChild(buttonHome);
-  const buttonMenu = document.createElement("button");
-  buttonMenu.textContent = "Menu";
-  nav.appendChild(buttonMenu);
-  const buttonAbout = document.createElement("button");
-  buttonAbout.textContent = "About";
-  nav.appendChild(buttonAbout);
-  header.appendChild(nav);
 }
 
 function addBody() {
