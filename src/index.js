@@ -4,6 +4,8 @@ const header = document.querySelector("header");
 const nav = document.querySelector(".nav");
 const content = document.querySelector("#content");
 
+// get buttons
+
 // event listeners
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.createElement("div");
@@ -15,8 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
   addHeader();
 
   // addBody();
-  addMenu();
+  // addMenu();
+  addAbout();
 });
+
+function addAbout() {
+  const about = document.createElement("section");
+  about.classList.add("about");
+  content.appendChild(about);
+
+  const aboutImg = document.createElement("img");
+  aboutImg.src = "../src/img/about.jpg";
+  aboutImg.alt = "about picture";
+  aboutImg.classList.add("img-about");
+  about.appendChild(aboutImg);
+
+  const aboutTitle = document.createElement("h2");
+  aboutTitle.textContent = "About us";
+  about.appendChild(aboutTitle);
+  const aboutParagraph = document.createElement("p");
+  aboutParagraph.textContent =
+    "lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum non minima earum, neque veniam fuga voluptates ipsum error mollitia velit rem maxime repellendus consequuntur, illo nobis vero dolores unde officia soluta doloremque facilis perspiciatis! Magni, optio minus. Recusandae perferendis aspernatur pariatur vero maxime atque mollitia, dolor at doloremque saepe minima.";
+  about.appendChild(aboutParagraph);
+}
 
 function addMenu() {
   const menu = document.createElement("section");

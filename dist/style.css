@@ -80,10 +80,12 @@ body {
   padding: 3rem;
 }
 
-.menu {
+.menu,
+.about {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  align-items: center;
 }
 
 .menu-item {
@@ -107,4 +109,12 @@ body {
   padding-top: 1rem;
   font-weight: 700;
   font-size: 1.4rem;
+}
+
+.img-about {
+  max-width: 30rem;
+}
+
+.about {
+  margin-top: 2rem;
 }
