@@ -1,5 +1,7 @@
 import createAbout from "./about";
 import createMenu from "./menu";
+import "./styles.css";
+
 // selectors
 const body = document.querySelector("body");
 const header = document.querySelector("header");
