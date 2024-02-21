@@ -118,3 +118,7 @@ body {
 .about {
   margin-top: 2rem;
 }
+
+.nav button.active {
+  background-color: rgba(107, 181, 255, 0.657);
+}

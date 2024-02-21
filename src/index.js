@@ -10,7 +10,7 @@ const buttonMenu = document.querySelector(".button-menu");
 const buttonAbout = document.querySelector(".button-about");
 
 // event listeners
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", (e) => {
   const container = document.createElement("div");
   container.classList.add("container");
   body.appendChild(container);
@@ -18,28 +18,37 @@ document.addEventListener("DOMContentLoaded", () => {
   container.appendChild(content);
 
   addHeader();
-
-  // addBody();
-  // addMenu();
-  // addAbout();
-  // FIXME: event listeners for buttons are not working
-  // FIXME: Add debuggers on webpack
-  // event listeners for buttons
-  buttonHome.addEventListener("click", () => {
-    content.innerHTML = "";
-    addBody();
-  });
-
-  buttonMenu.addEventListener("click", () => {
-    content.innerHTML = "";
-    addMenu();
-  });
-
-  buttonAbout.addEventListener("click", () => {
-    content.innerHTML = "";
-    addAbout();
-  });
+  addBody();
+  addButtonListeners();
 });
+
+function addButtonListeners() {
+  function clearActiveStates() {
+    document.querySelectorAll("button").forEach((button) => {
+      button.classList.remove("active");
+    });
+  }
+
+  function handleButtonClick(contentUpdater) {
+    return (e) => {
+      const content = document.getElementById("content");
+      content.innerHTML = "";
+      clearActiveStates();
+      e.currentTarget.classList.add("active");
+      contentUpdater();
+    };
+  }
+
+  document
+    .querySelector(".button-home")
+    .addEventListener("click", handleButtonClick(addBody));
+  document
+    .querySelector(".button-menu")
+    .addEventListener("click", handleButtonClick(addMenu));
+  document
+    .querySelector(".button-about")
+    .addEventListener("click", handleButtonClick(addAbout));
+}
 
 function addHeader() {
   // Add logo image
@@ -161,6 +170,4 @@ function addBody() {
   introductionParagraph2.textContent =
     "lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum non minima earum, neque veniam fuga voluptates ipsum error mollitia velit rem maxime repellendus consequuntur, illo nobis vero dolores unde officia soluta doloremque facilis perspiciatis! Magni, optio minus. Recusandae perferendis aspernatur pariatur vero maxime atque mollitia, dolor at doloremque saepe minima.";
   introduction.appendChild(introductionParagraph2);
-
-  console.log("body added");
 }
