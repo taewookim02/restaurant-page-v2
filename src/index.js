@@ -1,3 +1,5 @@
+import createAbout from "./about";
+import createMenu from "./menu";
 // selectors
 const body = document.querySelector("body");
 const header = document.querySelector("header");
@@ -44,10 +46,10 @@ function addButtonListeners() {
     .addEventListener("click", handleButtonClick(addBody));
   document
     .querySelector(".button-menu")
-    .addEventListener("click", handleButtonClick(addMenu));
+    .addEventListener("click", handleButtonClick(createMenu));
   document
     .querySelector(".button-about")
-    .addEventListener("click", handleButtonClick(addAbout));
+    .addEventListener("click", handleButtonClick(createAbout));
 }
 
 function addHeader() {
@@ -73,76 +75,6 @@ function addHeader() {
   buttonAbout.classList.add("button-about");
   nav.appendChild(buttonAbout);
   header.appendChild(nav);
-}
-
-function addAbout() {
-  const about = document.createElement("section");
-  about.classList.add("about");
-  content.appendChild(about);
-
-  const aboutImg = document.createElement("img");
-  aboutImg.src = "../src/img/about.jpg";
-  aboutImg.alt = "about picture";
-  aboutImg.classList.add("img-about");
-  about.appendChild(aboutImg);
-
-  const aboutTitle = document.createElement("h2");
-  aboutTitle.textContent = "About us";
-  about.appendChild(aboutTitle);
-  const aboutParagraph = document.createElement("p");
-  aboutParagraph.textContent =
-    "lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum non minima earum, neque veniam fuga voluptates ipsum error mollitia velit rem maxime repellendus consequuntur, illo nobis vero dolores unde officia soluta doloremque facilis perspiciatis! Magni, optio minus. Recusandae perferendis aspernatur pariatur vero maxime atque mollitia, dolor at doloremque saepe minima.";
-  about.appendChild(aboutParagraph);
-}
-
-function addMenu() {
-  const menu = document.createElement("section");
-  menu.classList.add("menu");
-  content.appendChild(menu);
-
-  // add multiple menu items
-  const menuItems = [
-    {
-      name: "Sushi 1",
-      description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
-      price: 10,
-      src: "../src/img/sushi1.jpg",
-    },
-    {
-      name: "Sushi 2",
-      description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
-      price: 20,
-      src: "../src/img/sushi2.jpeg",
-    },
-    {
-      name: "Sushi 3",
-      description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
-      price: 30,
-      src: "../src/img/sushi3.jpeg",
-    },
-  ];
-
-  menuItems.forEach((item, i) => {
-    const menuItem = document.createElement("div");
-    const menuItemImg = document.createElement("div");
-    menuItemImg.classList.add("menu-img");
-    const menuItemText = document.createElement("div");
-    menuItemText.classList.add("menu-text");
-
-    menuItem.appendChild(menuItemImg);
-    menuItem.appendChild(menuItemText);
-    menuItem.classList.add("menu-item");
-    menuItemText.innerHTML = `
-      <h3>${item.name}</h3>
-      <p>${item.description}</p>
-      <p class="menu-price">$${item.price}</p>
-    `;
-
-    menuItemImg.innerHTML = `
-      <img src="${item.src}" alt="Sushi ${i}" class="img-menu-item" />
-    `;
-    menu.appendChild(menuItem);
-  });
 }
 
 function addBody() {
