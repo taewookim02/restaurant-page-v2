@@ -1,3 +1,7 @@
+import impImgMenu1 from "./img/sushi1.jpg";
+import impImgMenu2 from "./img/sushi2.jpeg";
+import impImgMenu3 from "./img/sushi3.jpeg";
+
 function createMenu() {
   const menu = document.createElement("section");
   menu.classList.add("menu");
@@ -9,19 +13,19 @@ function createMenu() {
       name: "Sushi 1",
       description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
       price: 10,
-      src: "../src/img/sushi1.jpg",
+      src: impImgMenu1,
     },
     {
       name: "Sushi 2",
       description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
       price: 20,
-      src: "../src/img/sushi2.jpeg",
+      src: impImgMenu2,
     },
     {
       name: "Sushi 3",
       description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
       price: 30,
-      src: "../src/img/sushi3.jpeg",
+      src: impImgMenu3,
     },
   ];
 

@@ -1,10 +1,13 @@
+import impImgAbout from "./img/about.jpg";
+
 function createAbout() {
   const about = document.createElement("section");
   about.classList.add("about");
   content.appendChild(about);
 
-  const aboutImg = document.createElement("img");
-  aboutImg.src = "../src/img/about.jpg";
+  // const aboutImg = document.createElement("img");
+  const aboutImg = new Image();
+  aboutImg.src = impImgAbout;
   aboutImg.alt = "about picture";
   aboutImg.classList.add("img-about");
   about.appendChild(aboutImg);

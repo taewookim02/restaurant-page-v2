@@ -1,14 +1,16 @@
 import createAbout from "./about";
 import createMenu from "./menu";
 import "./styles.css";
+import impImgLogo from "./img/logo.png";
+import impImgHero from "./img/sushi.jpeg";
 
 // selectors
 const body = document.querySelector("body");
 const header = document.querySelector("header");
 const nav = document.querySelector(".nav");
 const content = document.querySelector("#content");
-
-// get buttons
+console.log("hehe");
+// get  buttons
 const buttonHome = document.querySelector(".button-home");
 const buttonMenu = document.querySelector(".button-menu");
 const buttonAbout = document.querySelector(".button-about");
@@ -56,8 +58,9 @@ function addButtonListeners() {
 
 function addHeader() {
   // Add logo image
-  const imgLogo = document.createElement("img");
-  imgLogo.src = "../src/img/logo.png";
+  // const imgLogo = document.createElement("img");
+  const imgLogo = new Image();
+  imgLogo.src = impImgLogo;
   imgLogo.alt = "logo";
   imgLogo.classList.add("img-logo");
   header.appendChild(imgLogo);
@@ -84,8 +87,10 @@ function addBody() {
   const hero = document.createElement("section");
   hero.classList.add("hero");
   content.appendChild(hero);
-  const imgHero = document.createElement("img");
-  imgHero.src = "../src/img/sushi.jpeg";
+  const imgHero = new Image();
+  // const imgHero = document.createElement("img");
+  imgHero.src = impImgHero;
+  // imgHero.src = "../src/img/sushi.jpeg";
   imgHero.alt = "sushi picture";
   imgHero.classList.add("img-hero");
   hero.appendChild(imgHero);
