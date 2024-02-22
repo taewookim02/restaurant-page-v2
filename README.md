@@ -1,5 +1,7 @@
 # Restaurant Page
 
+![Screenshot preview](./src/img/preview.png)
+
 Link: https://taewookim02.github.io/restaurant-page-v2/
 
 This project demonstrates the use of Webpack for module bundling, incorporating module splitting, loading CSS and images via Webpack, and dynamically generating the DOM using JavaScript. The main goal is to showcase a single-page application architecture for a restaurant page, where content is loaded dynamically based on user interaction.
